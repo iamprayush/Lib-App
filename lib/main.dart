@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:libapp/screens/landing_screen.dart';
+import 'package:libapp/screens/login_screen.dart';
 
 import 'constants.dart';
 
@@ -15,11 +16,17 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Library App',
       theme: ThemeData(
+        accentColor: kPrimaryColor,
         scaffoldBackgroundColor: kBackgroundColor,
         primaryColor: kPrimaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
+        fontFamily: 'Gilroy',
       ),
-      home: LandingScreen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => LandingScreen(),
+        '/login': (context) => LoginScreen(),
+      },
     );
   }
 }

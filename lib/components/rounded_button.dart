@@ -17,37 +17,34 @@ class RoundedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Padding(
-        padding: EdgeInsets.symmetric(horizontal: kDefaultPadding * 1.5),
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              child: FlatButton(
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(
-                    color: outlined ? kTextColor : Colors.transparent,
-                    width: 1.5,
-                    style: BorderStyle.solid,
-                  ),
-                  borderRadius: BorderRadius.circular(7.0),
+      child: Row(
+        children: <Widget>[
+          Expanded(
+            child: FlatButton(
+              shape: RoundedRectangleBorder(
+                side: BorderSide(
+                  color: outlined ? kTextColor : Colors.transparent,
+                  width: 1.5,
+                  style: BorderStyle.solid,
                 ),
-                color: outlined ? kBackgroundColor : color,
-                onPressed: onPressed,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(vertical: 15.0),
-                  child: Text(
-                    content,
-                    style: TextStyle(
-                      color: outlined ? kTextColor : kBackgroundColor,
-                      fontSize: 17.0,
-                      fontFamily: 'Gilroy-Medium',
-                    ),
+                borderRadius: BorderRadius.circular(7.0),
+              ),
+              color: outlined ? kBackgroundColor : color,
+              onPressed: onPressed,
+              child: Padding(
+                padding: EdgeInsets.symmetric(vertical: 15.0),
+                child: Text(
+                  content,
+                  style: TextStyle(
+                    color: outlined ? kTextColor : kBackgroundColor,
+                    fontSize: 17.0,
+                    fontFamily: 'Gilroy-Medium',
                   ),
                 ),
               ),
-            )
-          ],
-        ),
+            ),
+          )
+        ],
       ),
     );
   }
