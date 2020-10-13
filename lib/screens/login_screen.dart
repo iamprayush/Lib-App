@@ -49,7 +49,27 @@ class LoginScreen extends StatelessWidget {
               Align(
                 alignment: Alignment.centerRight,
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    showModalBottomSheet(
+                      context: context,
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(7.0),
+                          topRight: Radius.circular(7.0),
+                        ),
+                      ),
+                      isScrollControlled: true,
+                      builder: (BuildContext context) {
+                        return AnimatedPadding(
+                          padding: MediaQuery.of(context).viewInsets,
+                          duration: const Duration(milliseconds: 100),
+                          curve: Curves.decelerate,
+                          child: ForgotPasswordModal(),
+                        );
+                      },
+                    );
+                  },
                   splashColor: Colors.transparent,
                   highlightColor: Colors.transparent,
                   child: Text(
@@ -89,6 +109,51 @@ class LoginScreen extends StatelessWidget {
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+class ForgotPasswordModal extends StatefulWidget {
+  @override
+  _ForgotPasswordModalState createState() => _ForgotPasswordModalState();
+}
+
+class _ForgotPasswordModalState extends State<ForgotPasswordModal> {
+  @override
+  Widget build(BuildContext context) {
+    Size screenSize = MediaQuery.of(context).size;
+    return Container(
+      color: kBackgroundColor,
+      height: screenSize.height * 0.5,
+      child: Padding(
+        padding: EdgeInsets.symmetric(
+          horizontal: screenSize.width * 0.1,
+          vertical: screenSize.height * 0.05,
+        ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: <Widget>[
+            Align(
+                alignment: Alignment.centerLeft,
+                child:
+                    HighlightedTitle(content: 'Forgot Password?', size: 32.0)),
+            Text(
+              'Enter the email you used while joining and we\'ll send you a link to reset your password.',
+              style: kSmallTextStyle,
+            ),
+            CustomTextFeild(
+              hintText: 'EMAIL',
+              onChanged: (value) {},
+              kbType: TextInputType.emailAddress,
+            ),
+            RoundedButton(
+              content: 'RESET PASSWORD',
+              color: kTextColor,
+              onPressed: () {},
+            ),
+          ],
         ),
       ),
     );

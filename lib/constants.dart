@@ -12,6 +12,12 @@ const kHeadingStyle = TextStyle(
   fontSize: 46.0,
 );
 
+const kSmallTextStyle = TextStyle(
+  color: kTextColor,
+  fontFamily: 'Gilroy',
+  fontSize: 17.0,
+);
+
 const kNormalTextStyle = TextStyle(
   color: kTextColor,
   fontFamily: 'Gilroy-Medium',
