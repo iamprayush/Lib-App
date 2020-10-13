@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:libapp/screens/joinus_screen.dart';
 import 'package:libapp/screens/landing_screen.dart';
 import 'package:libapp/screens/login_screen.dart';
 
@@ -26,6 +27,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => LandingScreen(),
         '/login': (context) => LoginScreen(),
+        '/joinus': (context) => JoinUsScreen(),
       },
     );
   }

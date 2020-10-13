@@ -34,7 +34,9 @@ class LandingScreen extends StatelessWidget {
               RoundedButton(
                 content: 'Join Us',
                 color: kTextColor,
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, '/joinus');
+                },
               ),
               SizedBox(height: 30.0),
               Row(

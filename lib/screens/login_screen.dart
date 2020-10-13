@@ -97,7 +97,9 @@ class LoginScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 7.0),
                   InkWell(
-                    onTap: () {},
+                    onTap: () {
+                      Navigator.pushReplacementNamed(context, '/joinus');
+                    },
                     splashColor: Colors.transparent,
                     highlightColor: Colors.transparent,
                     child: Text(
@@ -144,7 +146,7 @@ class _ForgotPasswordModalState extends State<ForgotPasswordModal> {
               style: kSmallTextStyle,
             ),
             CustomTextFeild(
-              hintText: 'EMAIL',
+              hintText: 'Email',
               onChanged: (value) {},
               kbType: TextInputType.emailAddress,
             ),
